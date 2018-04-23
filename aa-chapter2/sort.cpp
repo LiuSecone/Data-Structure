@@ -186,13 +186,19 @@ void merge_sort_nonrecursion(std::vector<int> &arr) {
 
 int main() {
     std::vector<int> length_list = { 2000, 5000, 10000, 15000, 20000, 30000 };
+    std::vector<std::vector<double>> result;
     for (auto length_list_iter = length_list.begin(); length_list_iter != length_list.end(); ++length_list_iter) {
         int length = *length_list_iter;
+        std::vector<double> n_result(8);
+        n_result[0] = length;
+        n_result[1] = length_list_iter - length_list.begin() + 1;
         for (int times = 0; times < REPEAT_TIMES; ++times) {
             auto unsort_number_backup = creat_unsort_number(length, times);
             auto unsort_number = unsort_number_backup;
             int disorder_degree = get_dd(unsort_number);
             int average_disorder_degree = static_cast<int>(disorder_degree / length);
+            n_result[2] += disorder_degree;
+            n_result[3] += average_disorder_degree;
 
             //quick sort 1
             unsort_number = unsort_number_backup;
@@ -201,6 +207,7 @@ int main() {
             auto end = std::chrono::system_clock::now();
             int depth1 = depth;
             double time1 = double(std::chrono::duration_cast<std::chrono::nanoseconds>(end - start).count() * std::pow(10, -6));
+            n_result[4] += time1;
 
             //quick sort 2
             unsort_number = unsort_number_backup;
@@ -209,6 +216,7 @@ int main() {
             end = std::chrono::system_clock::now();
             int depth2 = depth;
             double time2 = double(std::chrono::duration_cast<std::chrono::nanoseconds>(end - start).count() * std::pow(10, -6));
+            n_result[5] += time2;
 
             //merge sort recursion
             unsort_number = unsort_number_backup;
@@ -217,7 +225,8 @@ int main() {
             end = std::chrono::system_clock::now();
             int depth3 = depth;
             double time3 = double(std::chrono::duration_cast<std::chrono::nanoseconds>(end - start).count() * std::pow(10, -6));
-            
+            n_result[6] += time3;
+
             //merge sort non-recursion
             unsort_number = unsort_number_backup;
             start = std::chrono::system_clock::now();
@@ -225,6 +234,7 @@ int main() {
             end = std::chrono::system_clock::now();
             int depth4 = depth;
             double time4 = double(std::chrono::duration_cast<std::chrono::nanoseconds>(end - start).count() * std::pow(10, -6));
+            n_result[7] += time4;
 
             std::cout << "|"
                 << (length_list_iter - length_list.begin()) * REPEAT_TIMES + times + 1 << "|"
@@ -238,6 +248,17 @@ int main() {
                 << time4 << "/" << depth4 << "|";
             std::cout << std::endl;
         }
+        for (auto iter = n_result.begin() + 3; iter != n_result.end(); ++iter) {
+            *iter /= REPEAT_TIMES;
+        }
+        result.push_back(n_result);
+    }
+    std::cout << std::endl;
+    for (auto j : result) {
+        for (auto i : j) {
+            std::cout << "|" << i;
+        }
+        std::cout << "|" << std::endl;
     }
     system("pause");
     return 0;
