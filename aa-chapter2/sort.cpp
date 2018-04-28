@@ -91,7 +91,7 @@ int quick_sort_1(std::vector<int> &arr, int l, int r) {
             ++i;
         }
         arr[j] = arr[i];
-        if (i < j) {
+        if (i != j || i == l) {
             flag = false;
         }
     }
@@ -114,6 +114,7 @@ int quick_sort_2(std::vector<int> &arr, int l, int r) {
     std::default_random_engine e;
     std::swap(arr[u(e)], arr[l]);
     int mid = arr[l];
+    bool flag = true;
     while (i < j) {
         while (i < j && arr[j] >= mid) {
             --j;
@@ -123,8 +124,14 @@ int quick_sort_2(std::vector<int> &arr, int l, int r) {
             ++i;
         }
         arr[j] = arr[i];
+        if (i != j || i == l) {
+            flag = false;
+        }
     }
     arr[i] = mid;
+    if (flag) {
+        return 1;
+    }
     int depth_l = quick_sort_1(arr, l, i - 1);
     int depth_r = quick_sort_1(arr, i + 1, r);
     return depth_l > depth_r ? depth_l + 1 : depth_r + 1;

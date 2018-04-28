@@ -2,10 +2,19 @@
 #include <vector>
 #include <fstream>
 #include <string>
+#include <algorithm>
 
 struct data {
     int id;
     double longitude, latitude, k_dist;
+    bool operator< (const data &exp) const {
+        return this->k_dist < exp.k_dist;
+    }
+
+    bool operator== (const data &exp) const {
+        return this->id == exp.id;
+    }
+
 };
 
 std::vector<struct data> get_data(std::string file_name){
@@ -24,11 +33,27 @@ std::vector<struct data> get_data(std::string file_name){
     return data;
 }
 
-int decrease_and_conquer(std::vector<struct data> data, int l, int r, int pos) {
-    if (l == r) {
-        std::cout << "ID: " << data[l].id << " K_dist: " << data[l].k_dist;
-        return 1;
+struct data select_bipartite(std::vector<struct data> data, int l, int r, int pos) {
+    if (r - l <= 75) {
+        std::sort(data.begin() + l, data.begin() + r + 1);
+        return data[pos];
     }
+    auto iter_mid = data.begin() + l;
+    for (auto iter = data.begin() + l; iter + 4 < data.begin() + r + 1; iter += 5) {
+        std::sort(iter, iter + 5);
+        std::swap(*(iter + 2), *iter_mid);
+        ++iter_mid;
+    }
+    //std::sort(data.begin() + l, iter_mid);
+    struct data mid = select_bipartite(data, l, iter_mid - data.begin() - 1, (iter_mid - data.begin() - l) / 2 + l);
+    int mid_no;
+    for (auto iter = data.begin() + l; iter != data.begin() + (iter_mid - data.begin()); ++iter) {
+        if (*iter == mid) {
+            mid_no = iter - data.begin();
+            break;
+        }
+    }
+    std::swap(data[l], data[mid_no]);
     int i = l;
     int j = r;
     auto m = data[l];
@@ -43,10 +68,70 @@ int decrease_and_conquer(std::vector<struct data> data, int l, int r, int pos) {
         data[j] = data[i];
     }
     data[i] = m;
-    return pos <= i ? decrease_and_conquer(data, l, i, pos) + 1 : decrease_and_conquer(data, i + 1, r, pos) + 1;
+    return pos <= i ? select_bipartite(data, l, i, pos) : select_bipartite(data, i + 1, r, pos);
 }
 
 int bipartite(std::vector<struct data> data, int l, int r, int pos) {
+    if (r - l <= 75) {
+        std::sort(data.begin() + l, data.begin() + r + 1);
+        std::cout << "ID: " << data[pos].id << " K_dist: " << data[pos].k_dist;
+        return 1;
+    }
+    auto iter_mid = data.begin() + l;
+    for (auto iter = data.begin() + l; iter + 4 < data.begin() + r + 1; iter += 5) {
+        std::sort(iter, iter + 5);
+        std::swap(*(iter + 2), *iter_mid);
+        ++iter_mid;
+    }
+    //std::sort(data.begin() + l, iter_mid);
+    struct data mid = select_bipartite(data, l, iter_mid - data.begin() - 1, (iter_mid - data.begin() - l) / 2 + l);
+    int mid_no;
+    for (auto iter = data.begin() + l; iter != data.begin() + (iter_mid - data.begin()); ++iter) {
+        if (*iter == mid) {
+            mid_no = iter - data.begin();
+            break;
+        }
+    }
+    std::swap(data[l], data[mid_no]);
+    int i = l;
+    int j = r;
+    auto m = data[l];
+    while (i < j) {
+        while (i < j && data[j].k_dist >= m.k_dist) {
+            --j;
+        }
+        data[i] = data[j];
+        while (i < j && data[i].k_dist <= m.k_dist) {
+            ++i;
+        }
+        data[j] = data[i];
+    }
+    data[i] = m;
+    return pos <= i ? bipartite(data, l, i, pos) + 1 : bipartite(data, i + 1, r, pos) + 1;
+}
+
+int trisection(std::vector<struct data> data, int l, int r, int pos) {
+    if (r - l <= 75) {
+        std::sort(data.begin() + l, data.begin() + r + 1);
+        std::cout << "ID: " << data[pos].id << " K_dist: " << data[pos].k_dist;
+        return 1;
+    }
+    auto iter_mid = data.begin() + l;
+    for (auto iter = data.begin() + l; iter + 4 < data.begin() + r + 1; iter += 5) {
+        std::sort(iter, iter + 5);
+        std::swap(*(iter + 2), *iter_mid);
+        ++iter_mid;
+    }
+    //std::sort(data.begin() + l, iter_mid);
+    struct data mid = select_bipartite(data, l, iter_mid - data.begin() - 1, (iter_mid - data.begin() - l) / 2 + l);
+    int mid_no;
+    for (auto iter = data.begin() + l; iter != data.begin() + (iter_mid - data.begin()); ++iter) {
+        if (*iter == mid) {
+            mid_no = iter - data.begin();
+            break;
+        }
+    }
+    std::swap(data[l], data[mid_no]);
     int i = l;
     int j = r;
     auto m = data[l];
@@ -65,73 +150,7 @@ int bipartite(std::vector<struct data> data, int l, int r, int pos) {
         std::cout << "ID: " << m.id << " K_dist: " << m.k_dist;
         return 1;
     }
-    return pos < i ? bipartite(data, l, i - 1, pos) + 1 : bipartite(data, i + 1, r, pos) +   1;
-}
-
-int trisection(std::vector<struct data> data, int l, int r, int pos) {
-    if (l == r) {
-        std::cout << "ID: " << data[l].id << " K_dist: " << data[l].k_dist;
-        return 1;
-    }
-    int i = l;
-    int j = r;
-    auto m1 = data[l];
-    auto m2 = data[l + 1];
-    if (m1.k_dist > m2.k_dist) {
-        std::swap(m1, m2);
-    }
-    std::vector<struct data> list1, list2, list3;
-    for (auto iter = data.begin() + l; iter != data.begin() + r + 1; ++iter) {
-        if (iter->k_dist < m1.k_dist) {
-            list1.push_back(*iter);
-        }
-        else {
-            if (iter->k_dist > m2.k_dist) {
-                list3.push_back(*iter);
-            }
-            if (iter->k_dist > m1.k_dist && iter->k_dist < m2.k_dist) {
-                list2.push_back(*iter);
-            }
-        }
-    }
-    auto iter = data.begin() + l;
-    for (auto i : list1) {
-        *iter = i;
-        ++iter;
-    }
-    *iter = m1;
-    auto pos_m1 = iter - data.begin();
-    ++iter;
-    for (auto i : list2) {
-        *iter = i;
-        ++iter;
-    }
-    *iter = m2;
-    auto pos_m2 = iter - data.begin();
-    ++iter;
-    for (auto i : list3) {
-        *iter = i;
-        ++iter;
-    }
-    if (pos_m1 == pos) {
-        std::cout << "ID: " << m1.id << " K_dist: " << m1.k_dist;
-        return 1;
-    }
-    if (pos_m2 == pos) {
-        std::cout << "ID: " << m2.id << " K_dist: " << m2.k_dist;
-        return 1;
-    }
-    if (pos < pos_m1) {
-        return trisection(data, l, pos_m1 - 1, pos) + 1;
-    }
-    else {
-        if (pos > pos_m2) {
-            return trisection(data, pos_m2 + 1, r, pos) + 1;
-        }
-        else {
-            return trisection(data, pos_m1, pos_m2, pos) + 1;
-        }
-    }
+    return pos < i ? trisection(data, l, i - 1, pos) + 1 : trisection(data, i + 1, r, pos) + 1;
 }
 
 int main() {
@@ -140,11 +159,11 @@ int main() {
     for (auto selection_number : selection_list) {
         std::cout << selection_number << std::endl;
         auto data = raw_data;
-        std::cout << " Depth: " << decrease_and_conquer(data, 0, data.size() - 1, selection_number - 1) << std::endl;
-        data = raw_data;
         std::cout << " Depth: " << bipartite(data, 0, data.size() - 1, selection_number - 1) << std::endl;
         data = raw_data;
         std::cout << " Depth: " << trisection(data, 0, data.size() - 1, selection_number - 1) << std::endl;
+        //data = raw_data;
+        //std::cout << select_bipartite(data, 0, data.size() - 1, selection_number - 1).k_dist << std::endl;
         std::cout << std::endl;
     }
     system("pause");

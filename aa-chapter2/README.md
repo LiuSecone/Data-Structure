@@ -16,47 +16,47 @@
 
 |编号|长度|组号|DD|ADD|Qs1|Qs2|递归合并|非递归合并|
 |---|---|---|---|---|---|---|---|---|
-|1|2000|1|3036|1|0.0008/1|0.0039/2|0.9739/12|0.8572/12|
-|2|2000|1|24766|12|0.0008/1|0.0056/5|0.8595/12|0.8/12|
-|3|2000|1|225188|112|0.0075/7|0.0099/7|0.8755/12|0.811/12|
-|4|2000|1|910715|455|0.0498/21|0.0695/22|0.8636/12|0.845/12|
-|5|2000|1|1005288|502|0.1455/19|0.1042/18|0.7865/12|0.8064/12|
-|6|5000|2|11491|2|0.0016/1|0.0068/3|2.4584/14|2.1891/14|
-|7|5000|2|167275|33|0.0035/1|0.0111/4|3.23/14|2.1013/14|
-|8|5000|2|1399402|279|0.002/1|0.013/3|2.1791/14|3.1005/14|
-|9|5000|2|5637831|1127|0.1485/21|0.228/21|2.0404/14|1.9426/14|
-|10|5000|2|6181618|1236|0.29/22|0.2442/24|2.0325/14|1.9615/14|
-|11|10000|3|37749|3|0.0031/1|0.0095/3|4.9971/15|3.8526/15|
-|12|10000|3|644699|64|0.0036/1|0.0106/3|4.1734/15|3.9542/15|
-|13|10000|3|5906046|590|0.0048/1|0.0521/11|4.1039/15|4.3449/15|
-|14|10000|3|22400354|2240|0.3477/24|0.3386/22|4.2626/15|3.9072/15|
-|15|10000|3|25171709|2517|0.5416/31|0.5484/25|4.5504/15|4.3005/15|
-|16|15000|4|116872|7|0.0047/1|0.0158/3|6.6723/15|6.199/15|
-|17|15000|4|1597883|106|0.0048/1|0.0277/6|6.6453/15|6.2767/15|
-|18|15000|4|12614636|840|0.0047/1|0.0632/9|6.5182/15|6.3332/15|
-|19|15000|4|50630144|3375|0.0048/1|0.3587/21|6.0262/15|6.1483/15|
-|20|15000|4|56788531|3785|0.8336/28|0.8469/33|6.0006/15|6.0085/15|
-|21|20000|5|300896|15|0.0067/1|0.0351/3|8.3616/16|8.3472/16|
-|22|20000|5|2563322|128|0.0064/1|0.023/3|8.9739/16|8.2039/16|
-|23|20000|5|22657537|1132|0.0064/1|0.0901/12|9.4541/16|8.1798/16|
-|24|20000|5|90758969|4537|0.9822/27|0.5397/24|7.9344/16|8.6518/16|
-|25|20000|5|100284366|5014|1.5411/32|1.103/30|8.4042/16|7.9842/16|
-|26|30000|6|642539|21|0.0098/1|0.0249/3|12.9707/16|13.218/16|
-|27|30000|6|5760660|192|0.0095/1|0.0339/3|13.5301/16|12.8232/16|
-|28|30000|6|51761785|1725|0.0095/1|0.1118/13|13.1053/16|12.1869/16|
-|29|30000|6|201918728|6730|1.2214/24|1.2164/27|12.3303/16|12.0233/16|
-|30|30000|6|223217104|7440|2.0563/29|2.0599/29|12.1241/16|11.3671/16|
+|1|2000|1|3036|1|0.3046/521|0.0379/388|0.881/12|1.0422/12|
+|2|2000|1|24766|12|0.085/200|0.0517/317|0.8865/12|0.8984/12|
+|3|2000|1|225188|112|0.0462/63|0.0533/90|0.8889/12|1.0232/12|
+|4|2000|1|910715|455|0.0941/23|0.1028/23|0.7834/12|0.7241/12|
+|5|2000|1|1005288|502|0.1067/20|0.1039/19|0.7498/12|0.9102/12|
+|6|5000|2|11491|2|2.7114/3228|1.2452/2474|2.3612/14|2.0583/14|
+|7|5000|2|167275|33|0.3832/422|0.2319/311|2.2234/14|2.2893/14|
+|8|5000|2|1399402|279|0.1694/100|0.1419/95|2.4486/14|2.0491/14|
+|9|5000|2|5637831|1127|0.3089/28|0.2651/32|2.2088/14|1.882/14|
+|10|5000|2|6181618|1236|0.3457/26|0.3279/24|2.4731/14|2.1322/14|
+|11|10000|3|37749|3|3.7894/1433|1.8999/954|4.5747/15|3.7978/15|
+|12|10000|3|644699|64|0.8036/549|1.175/796|4.2974/15|4.3105/15|
+|13|10000|3|5906046|590|0.3054/115|0.3429/96|4.0679/15|4.1008/15|
+|14|10000|3|22400354|2240|0.6392/30|0.5504/29|3.9688/15|4.6799/15|
+|15|10000|3|25171709|2517|0.9454/31|0.6282/28|5.0488/15|4.2508/15|
+|16|15000|4|116872|7|12.9873/4176|0.9121/599|6.4834/15|6.0191/15|
+|17|15000|4|1597883|106|2.46/735|0.868/482|6.2859/15|6.5398/15|
+|18|15000|4|12614636|840|0.3986/112|0.5171/108|5.9184/15|5.7398/15|
+|19|15000|4|50630144|3375|0.8976/35|0.8675/30|6.7022/15|6.2155/15|
+|20|15000|4|56788531|3785|0.9869/32|0.9814/35|6.5485/15|5.7303/15|
+|21|20000|5|300896|15|11.3346/5034|8.3769/3328|8.1845/16|7.7147/16|
+|22|20000|5|2563322|128|2.705/1063|1.911/635|8.8565/16|8.19/16|
+|23|20000|5|22657537|1132|0.7645/145|0.7715/121|8.7079/16|8.2974/16|
+|24|20000|5|90758969|4537|1.284/38|1.6845/33|8.3926/16|8.3132/16|
+|25|20000|5|100284366|5014|1.2903/33|1.3124/32|8.2939/16|8.8624/16|
+|26|30000|6|642539|21|12.2931/3781|6.1938/2933|13.0363/16|12.2231/16|
+|27|30000|6|5760660|192|3.9609/788|2.3257/841|13.3251/16|12.2271/16|
+|28|30000|6|51761785|1725|1.1788/141|1.005/145|13.4688/16|12.2142/16|
+|29|30000|6|201918728|6730|2.4497/33|1.926/36|12.4618/16|12.0454/16|
+|30|30000|6|223217104|7440|2.0816/31|2.2843/32|13.0046/16|13.711/16|
 
 #### 表2
 
 |长度|组号|avg DD|avg ADD|avg Qs1|avg Qs2|avg 递归合并|avg 非递归合并|
 |---|---|---|---|---|---|---|---|
-|2000|1|2.16899e+06|216.4|0.04088|0.03862|0.8718|0.82392|
-|5000|2|1.33976e+07|535.4|0.08912|0.10062|2.38808|2.259|
-|10000|3|5.41606e+07|1082.8|0.18016|0.19184|4.41748|4.07188|
-|15000|4|1.21748e+08|1622.6|0.17052|0.26246|6.37252|6.19314|
-|20000|5|2.16565e+08|2165.2|0.50856|0.35818|8.62564|8.27338|
-|30000|6|4.83301e+08|3221.6|0.6613|0.68938|12.8121|12.3237|
+|2000|1|2.16899e+06|216.4|0.12732|0.06992|0.83792|0.91962|
+|5000|2|1.33976e+07|535.4|0.78372|0.4424|2.34302|2.08218|
+|10000|3|5.41606e+07|1082.8|1.2966|0.91928|4.39152|4.22796|
+|15000|4|1.21748e+08|1622.6|3.54608|0.82922|6.38768|6.0489|
+|20000|5|2.16565e+08|2165.2|3.47568|2.81126|8.48708|8.27554|
+|30000|6|4.83301e+08|3221.6|4.39282|2.74696|13.0593|12.4842|
 
 ### 运行结果截图
 
@@ -66,9 +66,11 @@
 
 * 当问题规模相同，序列内容不变的时候，一般来说效率`Qs`>`Qs2`>`非递归归并`>`递归归并`。虽然两种排序方式都为*O(nlog(n))*，但是显然快速排序的常数小于归并排序。虽然在当前的数据下`Qs1`的效率大于`Qs2`，但是`Qs1`在逆序等情况下会发生退化，效率显著降低。
 
-* 当问题规模不变的情况下，随着数组的混乱程度增加，问题求解时间普遍并无太大变化。`Qs1`因为每次总是选择第一个作为轴心，因此当混乱程序较小的时候，速度相对会快一些。
+* 当问题规模不变的情况下，混乱程度过低，反而会因为很难将问题分为长度相似的两端而增加了递归深度，从而加长了排序时间。
 
 * 当问题规模不同的情况下，数组混乱都取平均值。因为问题求解的复杂度为*O(nlog(n))*，可以看到时间会显著增加。
+
+* 在数组有序度相对较高的情况下，在区间内随机选择一个作为中枢的排序方式因为可以将两部分划分的更加相近，因此效率更好。
 
 ### 代码
 
@@ -346,25 +348,22 @@ int main() {
 
 ### 实验结果
 
-> 表中的`一分为二`和`一分为三`分别对应PPT中相应的算法。`分为三块`是对一分为三进行改进，取两个中枢，将区间分为三块的做法。
-
-|查找编号|ID|k_dist|一分为二|一分为三|分为三块|
-|---|---|---|---|---|---|
-|1|568030|103.075|5|4|7|
-|5|567883|126.096|9|7|6|
-|50|568074|208.475|15|14|11|
-|1033|568313|2735.8|13|8|4|
+|查找编号|ID|k_dist|一分为二|一分为三|
+|---|---|---|---|---|
+|1|568030|103.075|6|5|
+|5|567883|126.096|6|5|
+|50|568074|208.475|6|5|
+|1033|568313|2735.8|5|5|
 
 ### 运行结果截图
 
-> 每一组从上往下依次是：`一分为二`、`一分为三`、`分为三块`。
+> 每一组从上往下依次是：`一分为二`、`一分为三`。
 
 ![运行结果截图](./2.png)
 
 ### 结果总结
 
-* 在这个数据中，每次划分区间总是选择第一个（或者第一个与第二个）可以看出`一分为二`，`一分为三`，`分为三块`的递归深度明显依次减小。因为划分的块数更多有利于将子问题更加细化。
-* `一分为三`，划分的第二个区间总是只有一个。而取两个中枢，将区间`分为三块`的做法，可以将划分区间长度更加相近，从而减小了递归的深度。
+* 在这个数据中，每次划分区间总是选择第一个（或者第一个与第二个）可以看出`一分为二`的递归深度大于`一分为三`的递归深度。因为划分的块数更多有利于将子问题更加细化。
 
 ### 代码
 
@@ -373,10 +372,19 @@ int main() {
 #include <vector>
 #include <fstream>
 #include <string>
+#include <algorithm>
 
 struct data {
     int id;
     double longitude, latitude, k_dist;
+    bool operator< (const data &exp) const {
+        return this->k_dist < exp.k_dist;
+    }
+
+    bool operator== (const data &exp) const {
+        return this->id == exp.id;
+    }
+
 };
 
 std::vector<struct data> get_data(std::string file_name){
@@ -395,11 +403,27 @@ std::vector<struct data> get_data(std::string file_name){
     return data;
 }
 
-int decrease_and_conquer(std::vector<struct data> data, int l, int r, int pos) {
-    if (l == r) {
-        std::cout << "ID: " << data[l].id << " K_dist: " << data[l].k_dist;
-        return 1;
+struct data select_bipartite(std::vector<struct data> data, int l, int r, int pos) {
+    if (r - l <= 75) {
+        std::sort(data.begin() + l, data.begin() + r + 1);
+        return data[pos];
     }
+    auto iter_mid = data.begin() + l;
+    for (auto iter = data.begin() + l; iter + 4 < data.begin() + r + 1; iter += 5) {
+        std::sort(iter, iter + 5);
+        std::swap(*(iter + 2), *iter_mid);
+        ++iter_mid;
+    }
+    //std::sort(data.begin() + l, iter_mid);
+    struct data mid = select_bipartite(data, l, iter_mid - data.begin() - 1, (iter_mid - data.begin() - l) / 2 + l);
+    int mid_no;
+    for (auto iter = data.begin() + l; iter != data.begin() + (iter_mid - data.begin()); ++iter) {
+        if (*iter == mid) {
+            mid_no = iter - data.begin();
+            break;
+        }
+    }
+    std::swap(data[l], data[mid_no]);
     int i = l;
     int j = r;
     auto m = data[l];
@@ -414,10 +438,70 @@ int decrease_and_conquer(std::vector<struct data> data, int l, int r, int pos) {
         data[j] = data[i];
     }
     data[i] = m;
-    return pos <= i ? decrease_and_conquer(data, l, i, pos) + 1 : decrease_and_conquer(data, i + 1, r, pos) + 1;
+    return pos <= i ? select_bipartite(data, l, i, pos) : select_bipartite(data, i + 1, r, pos);
 }
 
 int bipartite(std::vector<struct data> data, int l, int r, int pos) {
+    if (r - l <= 75) {
+        std::sort(data.begin() + l, data.begin() + r + 1);
+        std::cout << "ID: " << data[pos].id << " K_dist: " << data[pos].k_dist;
+        return 1;
+    }
+    auto iter_mid = data.begin() + l;
+    for (auto iter = data.begin() + l; iter + 4 < data.begin() + r + 1; iter += 5) {
+        std::sort(iter, iter + 5);
+        std::swap(*(iter + 2), *iter_mid);
+        ++iter_mid;
+    }
+    //std::sort(data.begin() + l, iter_mid);
+    struct data mid = select_bipartite(data, l, iter_mid - data.begin() - 1, (iter_mid - data.begin() - l) / 2 + l);
+    int mid_no;
+    for (auto iter = data.begin() + l; iter != data.begin() + (iter_mid - data.begin()); ++iter) {
+        if (*iter == mid) {
+            mid_no = iter - data.begin();
+            break;
+        }
+    }
+    std::swap(data[l], data[mid_no]);
+    int i = l;
+    int j = r;
+    auto m = data[l];
+    while (i < j) {
+        while (i < j && data[j].k_dist >= m.k_dist) {
+            --j;
+        }
+        data[i] = data[j];
+        while (i < j && data[i].k_dist <= m.k_dist) {
+            ++i;
+        }
+        data[j] = data[i];
+    }
+    data[i] = m;
+    return pos <= i ? bipartite(data, l, i, pos) + 1 : bipartite(data, i + 1, r, pos) + 1;
+}
+
+int trisection(std::vector<struct data> data, int l, int r, int pos) {
+    if (r - l <= 75) {
+        std::sort(data.begin() + l, data.begin() + r + 1);
+        std::cout << "ID: " << data[pos].id << " K_dist: " << data[pos].k_dist;
+        return 1;
+    }
+    auto iter_mid = data.begin() + l;
+    for (auto iter = data.begin() + l; iter + 4 < data.begin() + r + 1; iter += 5) {
+        std::sort(iter, iter + 5);
+        std::swap(*(iter + 2), *iter_mid);
+        ++iter_mid;
+    }
+    //std::sort(data.begin() + l, iter_mid);
+    struct data mid = select_bipartite(data, l, iter_mid - data.begin() - 1, (iter_mid - data.begin() - l) / 2 + l);
+    int mid_no;
+    for (auto iter = data.begin() + l; iter != data.begin() + (iter_mid - data.begin()); ++iter) {
+        if (*iter == mid) {
+            mid_no = iter - data.begin();
+            break;
+        }
+    }
+    std::swap(data[l], data[mid_no]);
     int i = l;
     int j = r;
     auto m = data[l];
@@ -436,73 +520,7 @@ int bipartite(std::vector<struct data> data, int l, int r, int pos) {
         std::cout << "ID: " << m.id << " K_dist: " << m.k_dist;
         return 1;
     }
-    return pos < i ? bipartite(data, l, i - 1, pos) + 1 : bipartite(data, i + 1, r, pos) +   1;
-}
-
-int trisection(std::vector<struct data> data, int l, int r, int pos) {
-    if (l == r) {
-        std::cout << "ID: " << data[l].id << " K_dist: " << data[l].k_dist;
-        return 1;
-    }
-    int i = l;
-    int j = r;
-    auto m1 = data[l];
-    auto m2 = data[l + 1];
-    if (m1.k_dist > m2.k_dist) {
-        std::swap(m1, m2);
-    }
-    std::vector<struct data> list1, list2, list3;
-    for (auto iter = data.begin() + l; iter != data.begin() + r + 1; ++iter) {
-        if (iter->k_dist < m1.k_dist) {
-            list1.push_back(*iter);
-        }
-        else {
-            if (iter->k_dist > m2.k_dist) {
-                list3.push_back(*iter);
-            }
-            if (iter->k_dist > m1.k_dist && iter->k_dist < m2.k_dist) {
-                list2.push_back(*iter);
-            }
-        }
-    }
-    auto iter = data.begin() + l;
-    for (auto i : list1) {
-        *iter = i;
-        ++iter;
-    }
-    *iter = m1;
-    auto pos_m1 = iter - data.begin();
-    ++iter;
-    for (auto i : list2) {
-        *iter = i;
-        ++iter;
-    }
-    *iter = m2;
-    auto pos_m2 = iter - data.begin();
-    ++iter;
-    for (auto i : list3) {
-        *iter = i;
-        ++iter;
-    }
-    if (pos_m1 == pos) {
-        std::cout << "ID: " << m1.id << " K_dist: " << m1.k_dist;
-        return 1;
-    }
-    if (pos_m2 == pos) {
-        std::cout << "ID: " << m2.id << " K_dist: " << m2.k_dist;
-        return 1;
-    }
-    if (pos < pos_m1) {
-        return trisection(data, l, pos_m1 - 1, pos) + 1;
-    }
-    else {
-        if (pos > pos_m2) {
-            return trisection(data, pos_m2 + 1, r, pos) + 1;
-        }
-        else {
-            return trisection(data, pos_m1, pos_m2, pos) + 1;
-        }
-    }
+    return pos < i ? trisection(data, l, i - 1, pos) + 1 : trisection(data, i + 1, r, pos) + 1;
 }
 
 int main() {
@@ -511,11 +529,11 @@ int main() {
     for (auto selection_number : selection_list) {
         std::cout << selection_number << std::endl;
         auto data = raw_data;
-        std::cout << " Depth: " << decrease_and_conquer(data, 0, data.size() - 1, selection_number - 1) << std::endl;
-        data = raw_data;
         std::cout << " Depth: " << bipartite(data, 0, data.size() - 1, selection_number - 1) << std::endl;
         data = raw_data;
         std::cout << " Depth: " << trisection(data, 0, data.size() - 1, selection_number - 1) << std::endl;
+        //data = raw_data;
+        //std::cout << select_bipartite(data, 0, data.size() - 1, selection_number - 1).k_dist << std::endl;
         std::cout << std::endl;
     }
     system("pause");
