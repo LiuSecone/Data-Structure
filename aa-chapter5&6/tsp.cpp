@@ -92,7 +92,7 @@ void branch(const std::vector<std::vector<double>> &data, const int &start_point
             }
         }
         else {
-            if (cur.dist < dist) {
+            if (cur.lower_bound < dist) {
                 std::vector<bool> visited(data.size(), false);
                 for (auto i : cur.path) {
                     visited[i] = true;
@@ -154,8 +154,10 @@ void tsp(const std::vector<std::vector<double>> &data, const int start_point) {
 int main() {
     const auto data15 = get_data(15);
     const auto data20 = get_data(20);
+    const auto data22 = get_data(22);
     tsp(data15, 12);
     tsp(data20, 17);
+    tsp(data22, 19);
     system("pause");
     return 0;
 }
